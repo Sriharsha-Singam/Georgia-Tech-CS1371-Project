@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grade Calc</title>
+
+<!--      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+<!--      <link rel="icon" href="favicon.ico" type="image/x-icon">-->
+      
+      <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Dancing+Script|Josefin+Sans|Frijole|Gloria+Hallelujah|Tangerine" rel="stylesheet">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<!--  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+<!--      <script src="index.js"></script>-->
+      <link rel="stylesheet" href="index.css">
+      
+  </head>
+  <body>
+      
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <h1 class="display-3">Calculate Your Grades</h1>
+              <p class="lead">Easy way to calculate all of your grades in high school or college!!!</p>
+              <div class="row"><div class="col-md-12 text-center " id="final"><input type="text" class="form-control" placeholder="Enter Desired Final Grade" id = "finalScore"></div></div>
+              <div class="form-group col-md-12 text-center" id="list">
+                <label for="exampleFormControlSelect1">Course Names</label>
+                <select class="form-control" id="listSelect">
+                    <option disabled selected>--Pick An Option--</option>
+                    <option>CS1371</option>
+                    <option>AE1350</option>
+                    <option>AE1601</option>
+                    <option>AE1770</option>
+                    <option>CHEM1211</option>
+                    <option>CHEM1212</option>
+                    <option>CHEM1315</option>
+                    <option>CHEM2311</option>
+                    <option>ECON1101</option>
+                    <option>ECON2100</option>
+                    <option>ECON2101</option>
+                    <option>ENGL1101</option>
+                    <option>ENGL1102</option>
+                    <option>MATH1111</option>
+                    <option>MATH1113</option>
+                    <option>MATH1501</option>
+                    <option>MATH1502</option>
+                    <option>PHYS2211</option>
+                    <option>PHYS2212</option>
+                    <option>PHYS2213</option>
+                    <option>PHIL2010</option>
+                    <option>PHIL2025</option>
+                    <option>PSYC2005</option>
+                    <option>PSYC2020</option>
+                    <option>PSYC2103</option>
+                    <option>NRE2110</option>
+                    <option>NRE2698</option>
+                    <option>CS1331</option>
+                    <option>CS1332</option>
+                    <option>ECE1010</option>
+                    <option>ECE2020</option>
+                    <option>ECE2026</option>
+                </select>
+              </div>
+              <div class="col-md-12 text-center" id="button"> 
+                  
+                <button type="button" class="btn btn-success text-center" id="calc">
+                      Calculate!
+                    </button> 
+<!--
+                  <div class="alert alert-success" role="alert" id="input">
+                      This is a secondary alert—check it out!
+                    </div>
+-->
+                  <div><h5 id="input">Your Final Exam Grade should be</h5></div>
+          </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <table>
+              <tr>
+                <div class= "row">
+                  <th id="cat" class="col-md-4">
+                      <ul class="list-group ">
+                          <li class="list-group-item list-group-item-success">Categories</li>
+                          <li class="list-group-item list-group-item-warning">Tests</li>
+                          <li class="list-group-item list-group-item-warning">Homework</li>
+                          <li class="list-group-item list-group-item-warning">Quiz</li>
+                          <li class="list-group-item list-group-item-warning">Class Participation</li>
+                          <li class="list-group-item list-group-item-warning">Extra Credit</li>
+                          <li class="list-group-item list-group-item-warning">Final Exam</li>
+                        </ul>
+                  </th>
+                  <th id="weight" class="col-md-4">
+                      <ul >
+                          <li class="list-group-item list-group-item-success">Weights in %</li>
+                          <li class="input-group-addon"><input type="text" class="form-control" placeholder="Test Weight" id = "testW"></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Homework Weight" id = "hwW" ></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Quiz Weight" id = "quizW"></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Class Participation Weight" id = "classpW" ></li>
+                           <li class="input-group-addon"><input type="disabled" class="form-control" placeholder="N/A" disabled></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Final Test Weight" id = "ftestW"></li>
+
+                        </ul>
+                  </th>
+                    <th id="scores" class="col-md-4">
+                      <ul >
+                          <li class="list-group-item list-group-item-success">Scores in %</li>
+                          <li class="input-group-addon"><input type="text" class="form-control" placeholder="Test Score" id = "testS"></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Homework Score" id = "hwS"></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Quiz Score" id = "quizS"></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Class Participation Score" id = "classS"></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="Extra Credit Score" id = "ecS"></li>
+                           <li class="input-group-addon"><input type="text" class="form-control" placeholder="N/A" disabled></li>
+
+                        </ul>
+                  </th>
+                  </div>
+              </tr>
+          </table>
+
+      </div>
+
+      <footer>Made By Sriharsha Singam</footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="index.js"></script>
+  </body>
+</html>
